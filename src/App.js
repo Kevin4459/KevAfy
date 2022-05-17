@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player';
+import Signup from './components/Signup';
 const NODE_URL = 'http://127.0.0.1:3001'
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class App extends React.Component {
       tracks: [],
       currentTrack: null,
       playlist: [],
+      user: null
     }
   }
   componentDidMount = async () => {
@@ -63,7 +65,7 @@ class App extends React.Component {
     console.log(playlist)
   }
   render() {
-    return (
+    return !this.state.user ? <Signup /> : (
       <div>
         <h1>{this.props.name}</h1>
         <br />
