@@ -21,6 +21,10 @@ class Signup extends React.Component {
   
       this.setState({ password: value });
     }
+
+    handleSubmit = async (e) => {
+        e.preventDefult()
+    }
   
     render() {
       return (
